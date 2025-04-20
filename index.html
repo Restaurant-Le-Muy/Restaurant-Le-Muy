@@ -95,17 +95,20 @@ html, body {
   position: relative;
 }
 
-/* Section image en haut */
-.hero-image {
-  height: 500px; /* la hauteur que tu veux pour ton image */
+/* IMAGE EN HAUT de page */
+.image-section {
   background-image: url('imagefond.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: auto;
+  min-height: 400px; /* tu peux adapter à la hauteur de ton image */
+  width: 100%;
 }
 
-/* Dégradé fluide qui prend le reste */
-body {
+/* CONTENU après l’image */
+.main-content {
+  padding: 30px 20px;
   background: linear-gradient(
     to bottom,
     #ff4d4d 0%,
@@ -114,10 +117,8 @@ body {
     #ffeb3b 75%,
     #ff4d4d 100%
   );
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
+    
 /* La section qui commence après l'image */
 .plat-du-jour {
   background: linear-gradient(to bottom, red, yellow, green); /* Dégradé de couleur */
