@@ -243,16 +243,30 @@ body.modal-open .menu {
     color: white;
     
     background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), /* Dégradé du bas de l'image vers du transparent */
       url('imagefond.jpg'),
-      url('flame.jpg');
-        background-position: top center, bottom center, top center;
-    background-size: auto 177.78vw, auto 177.78vw, auto 177.78vw;
+        background-position: top center;
+    background-size: auto 177.78vw, auto 177.78vw;
     background-repeat: no-repeat;
     background-attachment: scroll;
   }
 }
-
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Réajouter la police ici */
+    color: white;
+    
+    background-image: 
+      linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), /* Dégradé du bas de l'image vers du transparent */
+      url('flame.jpg'),
+        background-position: 0% 150%;
+    background-size: auto 177.78vw, auto 177.78vw;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+}
   </style>
 </head>
 <body>
