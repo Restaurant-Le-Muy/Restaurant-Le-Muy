@@ -216,33 +216,69 @@ body.modal-open .menu {
     transform: translateY(-30px);
   }
 }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  position: relative;
-  z-index: 0;
-}
-  
-    body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  background-image: url('imagefond.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  pointer-events: none;
-}
-  
+
 body {
   background-color: black; /* Applique un fond noir */
 }
+
+  /* Pour les grands écrans (PC) */
+@media screen and (min-width: 768px) {
+  body {
+    font-family: 'Poppins', sans-serif;
+    /* Autres styles spécifiques pour les grands écrans */
+  }
+}
+
+/* Pour les petits écrans (mobile/tablettes en portrait) */
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url('flame.jpg'),
+      url('imagefond.jpg');
+    
+    background-position: 
+      center center,   /* Pour le dégradé */
+      center 500px,    /* Position de flame.jpg */
+      top center;      /* Position de imagefond.jpg */
+
+    background-size: 
+      cover,           /* Pour le dégradé */
+      auto 177.78vw,   /* Respect du ratio 9/16 pour flame.jpg */
+      cover;           /* Rognage centré de imagefond.jpg */
+
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+  }
+
+  /* Pour l'image imagefond.jpg en haut, en fond */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background-image: url('imagefond.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* S'assurer que le texte est visible en premier plan */
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
   </style>
 </head>
 <body>
