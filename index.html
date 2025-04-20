@@ -55,7 +55,7 @@ body {
 }
 
 /* Pour les grands écrans (PC) */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   body {
     font-family: 'Poppins', sans-serif;
     background-size: 100% auto; /* Assure-toi que l'image soit correctement dimensionnée sur PC */
@@ -100,7 +100,7 @@ body {
 
 .menu-item {
   display: block;
-  color: black;
+  color: white;
   text-decoration: none;
   margin: 10px 0;
   font-size: 1.2rem;
@@ -253,20 +253,33 @@ body {
 }
 
 /* Pour les grands écrans (PC) */
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 768px) {
+  /* Par défaut, pour les grands écrans, l'image et la police doivent être correctes */
   body {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-size: 100% auto; /* Assure-toi que l'image soit correctement dimensionnée sur PC */
+    color: white;
+
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url('imagefond.jpg') no-repeat top center;
+    
+    background-size: auto 177.78vw; /* Ajuste le fond en 9/16 */
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+  }
+
+  /* Ajout de l'image flame pour la version mobile */
+  body {
+    background-image: url('flame.jpg'), url('imagefond.jpg'); /* Les deux images en arrière-plan */
+    background-position: center 1000px, top center; /* Positionnement des images */
+    background-size: auto 177.78vw, 100% auto; /* Ajuste la taille des images */
+    background-attachment: scroll;
+    background-repeat: no-repeat;
   }
 }
-  body {
-  background-image: url('flame.jpg');
-  background-position: center 1000px; /* Centrer l'image à 1000px du haut */
-  background-repeat: no-repeat;
-  background-size: auto 177.78vw; /* Tu peux ajuster la taille comme tu veux */
-  background-attachment: scroll;
-}
-
+  
 body {
   background-color: black; /* Applique un fond noir */
 }
