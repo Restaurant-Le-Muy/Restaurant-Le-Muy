@@ -236,26 +236,30 @@ body.modal-open .menu {
   }
 }
 @media screen and (max-width: 768px) {
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: white;
+ /* Par défaut, pour les grands écrans, l'image et la police doivent être correctes */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('imagefond.jpg') no-repeat top center;
+  
+  background-size: 100% auto;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
 
-    /* Dégradé pour la première image (imagefond.jpg) */
-    background-image: 
-      linear-gradient(to bottom, transparent, black), 
-      url('imagefond.jpg'), 
-      linear-gradient(to top, black, transparent),
-      url('flame.jpg');
-    
-    /* Positionnement et taille des images */
-    background-position: top center, top center, 100% center;
-    background-size: 100% auto, 100% auto; /* Garder le ratio 9:16 sans déformation */
-    background-repeat: no-repeat; /* Pas de répétition */
-    background-attachment: scroll; /* L'image défile avec la page */
+/* Pour les grands écrans (PC) */
+@media screen and (min-width: 769px) {
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-size: 100% auto; /* Assure-toi que l'image soit correctement dimensionnée sur PC */
   }
 }
+
     background-image: 
   linear-gradient(to top, black 0%, transparent 50%), 
   url('imagefond.jpg');
