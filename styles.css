@@ -8,6 +8,12 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+/* Désactive l'effet fixe sur les petits écrans */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
 
 h1 {
   margin-bottom: 50px;
