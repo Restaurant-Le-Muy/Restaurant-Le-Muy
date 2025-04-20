@@ -242,7 +242,7 @@ body.modal-open .menu {
     font-family: 'Poppins', sans-serif;
     color: white;
 
-    /* Dégradé pour la première image */
+    /* Dégradé pour la première image avec ratio 9:16 */
     background-image: 
       linear-gradient(to bottom, transparent, black), 
       url('imagefond.jpg'), /* Première image */
@@ -250,7 +250,7 @@ body.modal-open .menu {
       url('flame.jpg'); /* Deuxième image */
     
     background-position: top center, top center, 100% center; /* Position des images */
-    background-size: 100% auto, 100% auto; /* Taille des images */
+    background-size: 100% 177.78vw, 100% 177.78vw; /* Maintien du ratio 9:16 pour les deux images */
     background-repeat: no-repeat; /* Pas de répétition */
     background-attachment: scroll; /* L'image défile avec la page */
   }
