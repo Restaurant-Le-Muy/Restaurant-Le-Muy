@@ -237,36 +237,32 @@ body.modal-open .menu {
 }
 @media screen and (max-width: 768px) {
   body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif; /* Réajouter la police ici */
-    color: white;
-    
-    background-image: 
-      linear-gradient(to bottom, transparent, black), /* Dégradé du bas de l'image vers du transparent */
-      url('imagefond.jpg'),
-        background-position: top center;
-    background-size: auto 177.78vw, auto 177.78vw;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+
+  /* Dégradé pour la première image */
+  background-image: 
+    linear-gradient(to bottom, transparent, black), 
+    url('imagefond.jpg');
+  
+  background-position: top center; /* Aligne la première image */
+  background-size: 100% auto; /* Taille de la première image */
+  background-repeat: no-repeat; /* Pas de répétition */
+  background-attachment: scroll; /* L'image défile avec la page */
+
+  /* Dégradé pour la deuxième image */
+  background-image: 
+    linear-gradient(to top, black, transparent),
+    url('flame.jpg');
+  
+  background-position: top center, 100% center; /* La deuxième image est positionnée en dessous de la première */
+  background-size: 100% auto; /* Taille de la deuxième image */
+  background-repeat: no-repeat; /* Pas de répétition */
+  background-attachment: scroll; /* L'image défile avec la page */
 }
-@media screen and (max-width: 768px) {
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif; /* Réajouter la police ici */
-    color: white;
-    
-    background-image: 
-      linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), /* Dégradé du bas de l'image vers du transparent */
-      url('flame.jpg'),
-        background-position: center center, 0% 120%;
-    background-size: auto 177.78vw, auto 177.78vw;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-  }
-}
+
   </style>
 </head>
 <body>
