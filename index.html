@@ -95,40 +95,29 @@ html, body {
   position: relative;
 }
 
-/* IMAGE EN FOND FIXE EN HAUT DE PAGE */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 500px; /* hauteur de ton image */
+/* Section image en haut */
+.hero-image {
+  height: 500px; /* la hauteur que tu veux pour ton image */
   background-image: url('imagefond.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -2;
 }
 
-/* DÉGRADÉ QUI COMMENCE APRÈS L’IMAGE */
-body::after {
-  content: "";
-  position: fixed;
-  top: 500px; /* commence juste après l'image */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -3;
-  background: repeating-linear-gradient(
+/* Dégradé fluide qui prend le reste */
+body {
+  background: linear-gradient(
     to bottom,
-    #ff4d4d,     /* rouge clair */
-    #ffeb3b 20%, /* jaune */
-    #4caf50 40%, /* vert */
-    #ffeb3b 60%, /* jaune */
-    #ff4d4d 80%  /* rouge clair */
+    #ff4d4d 0%,
+    #ffeb3b 25%,
+    #4caf50 50%,
+    #ffeb3b 75%,
+    #ff4d4d 100%
   );
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-    
 /* La section qui commence après l'image */
 .plat-du-jour {
   background: linear-gradient(to bottom, red, yellow, green); /* Dégradé de couleur */
