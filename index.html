@@ -242,19 +242,23 @@ body.modal-open .menu {
     font-family: 'Poppins', sans-serif;
     color: white;
 
-    /* Dégradé pour la première image avec ratio 9:16 */
+    /* Dégradé pour la première image (imagefond.jpg) */
     background-image: 
       linear-gradient(to bottom, transparent, black), 
-      url('imagefond.jpg'), /* Première image */
-      linear-gradient(to top, black, transparent), /* Dégradé pour la deuxième image */
-      url('flame.jpg'); /* Deuxième image */
+      url('imagefond.jpg'), 
+      linear-gradient(to top, black, transparent),
+      url('flame.jpg');
     
-    background-position: top center, top center, 100% center; /* Position des images */
-    background-size: 100% 177.78vw, 100% 177.78vw; /* Maintien du ratio 9:16 pour les deux images */
+    /* Positionnement et taille des images */
+    background-position: top center, top center, 100% center;
+    background-size: 100% auto, 100% auto; /* Garder le ratio 9:16 sans déformation */
     background-repeat: no-repeat; /* Pas de répétition */
     background-attachment: scroll; /* L'image défile avec la page */
   }
 }
+    background-image: 
+  linear-gradient(to top, black 0%, transparent 50%), 
+  url('imagefond.jpg');
 
 
   </style>
