@@ -96,7 +96,13 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-
+/* Désactive l'effet fixe sur les petits écrans */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+    
     .container {
       max-width: 800px;
       margin: 0 auto;
