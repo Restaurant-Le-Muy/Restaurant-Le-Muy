@@ -51,7 +51,7 @@ body {
   background-size: 100% auto;
   background-attachment: scroll;
   background-repeat: no-repeat;
-  min-height: 1000vh; /* Juste pour que les deux images soient visibles */
+  
 }
 
 /* Pour les grands écrans (PC) */
@@ -246,8 +246,8 @@ body.modal-open .menu {
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url('imagefond.jpg'),
       url('flame.jpg');
-    background-position: top center; /* Image alignée en haut */
-    background-size: auto 177.78vw; /* Ajuste le fond en 9/16 */
+        background-position: top center, bottom center, top center;
+    background-size: auto 177.78vw, auto 177.78vw, auto 177.78vw;
     background-repeat: no-repeat;
     background-attachment: scroll;
   }
