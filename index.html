@@ -36,6 +36,30 @@
     color: white; /* Si tu as d'autres couleurs de texte à ajuster, fais-le ici */
   }
 }
+    /* Par défaut, pour les grands écrans, l'image et la police doivent être correctes */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('imagefond.jpg') no-repeat top center;
+  
+  background-size: 100% auto;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+/* Pour les grands écrans (PC) */
+@media screen and (min-width: 769px) {
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-size: 100% auto; /* Assure-toi que l'image soit correctement dimensionnée sur PC */
+  }
+}
+    
     /* Style pour le bouton hamburger */
 .hamburger {
   font-size: 30px;
