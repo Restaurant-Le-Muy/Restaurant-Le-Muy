@@ -95,14 +95,22 @@ body {
   font-family: 'Poppins', sans-serif;
   color: white;
   padding: 0;
-  background: linear-gradient(to bottom, red, yellow, green); /* Le dégradé qui commence après l'image */
+  background: repeating-linear-gradient(
+    to bottom,
+    red,         /* Première couleur (rouge) */
+    yellow 20%,  /* Transition douce vers le jaune */
+    green 40%,   /* Transition vers le vert */
+    yellow 60%,  /* Retour vers le jaune */
+    red 80%,     /* Retour vers le rouge */
+    red 100%     /* Retour au début pour répéter */
+  );
 }
     
 /* La première section qui contient l'image */
 .top-banner {
   height: 500px; /* La hauteur de l'image de fond */
   background-image: url('imagefond.jpg');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-attachment: fixed; /* Empêche l'image de se déplacer quand on fait défiler */
   background-repeat: no-repeat;
