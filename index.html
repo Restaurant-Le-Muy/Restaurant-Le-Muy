@@ -94,22 +94,23 @@ html, body {
 body {
   font-family: 'Poppins', sans-serif;
   color: white;
-  padding: 0; /* On enlève les padding sur le body */
+  padding: 0;
+  background: linear-gradient(to bottom, red, yellow, green); /* Le dégradé qui commence après l'image */
 }
-
-/* Nouvelle section pour l'image de fond */
-.image-section {
-  height: auto; /* Laisse la hauteur s'ajuster selon l'image */
+    
+/* La première section qui contient l'image */
+.top-banner {
+  height: 500px; /* La hauteur de l'image de fond */
   background-image: url('imagefond.jpg');
-  background-size: cover; /* L'image prend tout l'espace */
+  background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Empêche l'image de se déplacer quand on fait défiler */
   background-repeat: no-repeat;
-  position: relative; /* Garantir qu'elle se positionne correctement */
 }
 
-/* La section principale après l'image */
-.main-content {
-  background: linear-gradient(to bottom, red, yellow, green); /* Dégradé après l'image */
+/* La section qui commence après l'image */
+.plat-du-jour {
+  background: linear-gradient(to bottom, red, yellow, green); /* Dégradé de couleur */
   padding: 30px;
 }
     
@@ -118,17 +119,6 @@ body {
   body {
     background-attachment: scroll;
   }
-}
-    
-body {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  padding: 0;
-  background-image: url('imagefond.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 
 .container {
@@ -141,17 +131,14 @@ body {
 .main-content {
   background: linear-gradient(to bottom, red, yellow, green);
 }
-    /* La section du plat du jour */
-.plat-du-jour {
-  margin-top: 100vh; /* Fais en sorte que le plat du jour soit après l'image */
-  background: linear-gradient(to bottom, red, yellow, green); /* Dégradé */
-  padding: 30px;
+    
+  /* La zone de contenu qui commence après la première image */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
 
     h1 {
       text-align: center;
@@ -269,11 +256,10 @@ body {
   </style>
 </head>
 <body>
-   <!-- Image de fond -->
-  <div class="image-section">
   
-  </div>
-  
+  <!-- Section avec l'image en fond -->
+  <div class="top-banner"></div>
+
   <div class="container">
     <h1 data-aos="fade-up">Notre Menu</h1>
     <h2 data-aos="fade-up" class="sub-title">Menümüz</h2>
