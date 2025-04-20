@@ -236,49 +236,32 @@ body.modal-open .menu {
   }
 }
 @media screen and (max-width: 768px) {
- /* Par défaut, pour les grands écrans, l'image et la police doivent être correctes */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('imagefond.jpg') no-repeat top center;
-  
-  background-size: auto 177.78vw; /* Ajuste le fond en 9/16 */
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-}
-
-/* Pour les grands écrans (PC) */
-@media screen and (max-width: 768px) {
-  /* Par défaut, pour les grands écrans, l'image et la police doivent être correctes */
   body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     color: white;
 
-    background: 
+    background-image: 
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url('imagefond.jpg') no-repeat top center;
+      url('flame.jpg'),
+      url('imagefond.jpg');
     
-    background-size: auto 177.78vw; /* Ajuste le fond en 9/16 */
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-  }
+    background-position: 
+      center center,   /* Pour le dégradé */
+      center 500px,    /* Position de flame.jpg */
+      center center;   /* Position de imagefond.jpg */
 
-  /* Ajout de l'image flame pour la version mobile */
-  body {
-    background-image: url('flame.jpg'), url('imagefond.jpg'); /* Les deux images en arrière-plan */
-    background-position: center 1000px, top center; /* Positionnement des images */
-    background-size: auto 177.78vw, 100% auto; /* Ajuste la taille des images */
+    background-size: 
+      cover,           /* Pour le dégradé */
+      auto 177.78vw,   /* Respect du ratio 9/16 pour flame.jpg */
+      cover;           /* Rognage centré de imagefond.jpg */
+
     background-attachment: scroll;
     background-repeat: no-repeat;
   }
 }
+
   
 body {
   background-color: black; /* Applique un fond noir */
