@@ -9,7 +9,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <style>
-       
+    
     #scrollTopBtn {
   position: fixed;
   bottom: 30px;
@@ -85,50 +85,21 @@ body.modal-open .menu {
   display: block;
   opacity: 1;
 }
-    
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-}
 
-/* Conteneur global avec fond image + dégradé fluide ensuite */
-body {
-  background: 
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.5) 0px,
-      rgba(0, 0, 0, 0.5) 400px,
-      #ff4d4d 420px,
-      #ffeb3b 50%,
-      #4caf50 75%,
-      #ffeb3b 90%,
-      #ff4d4d 100%
-    ),
-    url('imagefond.jpg');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  min-height: 100vh;
-  padding: 30px 20px;
-}
-    
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 30px 20px;
+    }
 
-  /* La zone de contenu qui commence après la première image */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
+    .container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
     h1 {
       text-align: center;
@@ -247,7 +218,7 @@ body {
 </head>
 <body>
   
-<div class="main-content">
+  <div class="container">
     <h1 data-aos="fade-up">Notre Menu</h1>
     <h2 data-aos="fade-up" class="sub-title">Menümüz</h2>
 
