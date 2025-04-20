@@ -95,6 +95,25 @@ body {
   font-family: 'Poppins', sans-serif;
   color: white;
   padding: 0;
+  background-color: white; /* Ajout d'une couleur de fond par défaut */
+}
+    
+/* La première section qui contient l'image */
+.top-banner {
+  height: 500px; /* Hauteur de l'image de fond */
+  background-image: url('imagefond.jpg');
+  background-size: cover; /* L'image couvre toute la surface sans être déformée */
+  background-position: center;
+  background-attachment: fixed; /* Empêche l'image de se déplacer lors du scroll */
+  background-repeat: no-repeat;
+}
+
+
+/* Le dégradé qui commence après l'image */
+body::after {
+  content: "";
+  display: block;
+  height: 100%; /* Pour que ça couvre toute la page */
   background: repeating-linear-gradient(
     to bottom,
     red,         /* Première couleur (rouge) */
@@ -104,18 +123,12 @@ body {
     red 80%,     /* Retour vers le rouge */
     red 100%     /* Retour au début pour répéter */
   );
+  position: absolute;
+  top: 500px;  /* Le dégradé commence juste après l'image */
+  width: 100%;
+  z-index: -1;  /* Pour que le dégradé ne couvre pas le contenu */
 }
     
-/* La première section qui contient l'image */
-.top-banner {
-  height: 500px; /* La hauteur de l'image de fond */
-  background-image: url('imagefond.jpg');
-  background-size: contain;
-  background-position: center;
-  background-attachment: fixed; /* Empêche l'image de se déplacer quand on fait défiler */
-  background-repeat: no-repeat;
-}
-
 /* La section qui commence après l'image */
 .plat-du-jour {
   background: linear-gradient(to bottom, red, yellow, green); /* Dégradé de couleur */
