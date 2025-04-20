@@ -224,7 +224,15 @@ body {
   </style>
 </head>
 <body>
-  
+
+  @media screen and (max-width: 768px) {
+  body {
+    background-position: center center;
+    background-size: auto 177.78vw; /* 100vw * 16 / 9 pour du 9/16 */
+    background-repeat: no-repeat;
+  }
+}
+
   <div class="container">
     <h1 data-aos="fade-up">Notre Menu</h1>
     <h2 data-aos="fade-up" class="sub-title">Menümüz</h2>
