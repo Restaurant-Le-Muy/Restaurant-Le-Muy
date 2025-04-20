@@ -49,3 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 });
+window.addEventListener('scroll', function() {
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    scrollTopBtn.style.display = "block"; // Affiche le bouton
+  } else {
+    scrollTopBtn.style.display = "none"; // Cache le bouton
+  }
+});
