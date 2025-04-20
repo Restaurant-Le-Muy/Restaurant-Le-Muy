@@ -106,43 +106,33 @@ html, body {
   width: 100%;
 }
 
-/* CONTENU après l’image */
-.main-content {
-  padding: 30px 20px;
+/* Ce wrapper gère tout le fond (image + dégradé après) */
+.content-wrapper {
   background: linear-gradient(
-    to bottom,
-    #ff4d4d 0%,
-    #ffeb3b 25%,
-    #4caf50 50%,
-    #ffeb3b 75%,
-    #ff4d4d 100%
-  );
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%, /* assombrit un peu le texte au début */
+      rgba(0, 0, 0, 0.6) 200px,
+      #ff4d4d 250px,
+      #ffeb3b 50%,
+      #4caf50 75%,
+      #ffeb3b 90%,
+      #ff4d4d 100%
+  ),
+  url('imagefond.jpg');
+  background-size: auto 400px, cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: scroll;
+  padding: 30px 20px;
 }
     
-/* La section qui commence après l'image */
-.plat-du-jour {
-  background: linear-gradient(to bottom, red, yellow, green); /* Dégradé de couleur */
-  padding: 30px;
-}
-    
-/* Désactive l'effet fixe sur les petits écrans */
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-  }
-}
-
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
 }
-/* Pour un dégradé continu à partir du fond */
-.main-content {
-  background: linear-gradient(to bottom, red, yellow, green);
-}
-    
+
   /* La zone de contenu qui commence après la première image */
 .container {
   max-width: 800px;
@@ -268,9 +258,10 @@ html, body {
 </head>
 <body>
   
-<!-- SECTION IMAGE FOND -->
-<div class="image-section"></div>
-  
+   <div class="content-wrapper">
+    <h1>Notre Menu</h1>
+    <h2>Le plat du jour</h2>
+     
  <!-- TON CONTENU PRINCIPAL -->
 <div class="main-content">
     <h1 data-aos="fade-up">Notre Menu</h1>
