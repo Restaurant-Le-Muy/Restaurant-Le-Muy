@@ -249,10 +249,26 @@ body.modal-open .menu {
     background-attachment: scroll;
   }
 }
+.bg2 {
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('flame.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+body::after {
+  content: "";
+  display: block;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+}
 
   </style>
 </head>
 <body>
+  
+<div class="bg2"></div>
 
   <div class="container">
     <h1 data-aos="fade-up">Notre Menu</h1>
