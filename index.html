@@ -9,15 +9,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <style>
-    
-.top-banner {
-  height: 300px;
-  background-image: url('imagefond.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-    
+       
     #scrollTopBtn {
   position: fixed;
   bottom: 30px;
@@ -93,29 +85,34 @@ body.modal-open .menu {
   display: block;
   opacity: 1;
 }
+    
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
   height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
   color: white;
+  padding: 0; /* On enlève les padding sur le body */
 }
 
-/* Bloc image plein écran tout en haut */
-.hero-section {
-  height: 100vh;
+/* Nouvelle section pour l'image de fond */
+.image-section {
+  height: auto; /* Laisse la hauteur s'ajuster selon l'image */
   background-image: url('imagefond.jpg');
-  background-size: cover;
+  background-size: cover; /* L'image prend tout l'espace */
   background-position: center;
-  background-attachment: scroll;
+  background-repeat: no-repeat;
+  position: relative; /* Garantir qu'elle se positionne correctement */
 }
 
-/* Partie principale avec fond dégradé */
+/* La section principale après l'image */
 .main-content {
-  background: linear-gradient(135deg, red, yellow, green);
-  padding: 30px 20px;
+  background: linear-gradient(to bottom, red, yellow, green); /* Dégradé après l'image */
+  padding: 30px;
 }
-
+    
 /* Désactive l'effet fixe sur les petits écrans */
 @media (max-width: 768px) {
   body {
@@ -259,9 +256,10 @@ html, body {
   </style>
 </head>
 <body>
+   <!-- Image de fond -->
+  <div class="image-section">
   
-  <!-- Bloc fullscreen avec image de fond -->
-  <div class="hero-section"></div>
+  </div>
   
   <div class="container">
     <h1 data-aos="fade-up">Notre Menu</h1>
