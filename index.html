@@ -119,21 +119,34 @@ body {
     background-attachment: scroll;
   }
 }
-    .hero-section {
-  height: 100vh;
+    
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  padding: 0;
   background-image: url('imagefond.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-/* Le reste du contenu, avec fond dégradé */
-.main-content {
-  background: linear-gradient(135deg, red, yellow, green);
-  color: white;
-  padding: 30px 20px;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
-    
+/* Pour un dégradé continu à partir du fond */
+.main-content {
+  background: linear-gradient(to bottom, red, yellow, green);
+}
+    /* La section du plat du jour */
+.plat-du-jour {
+  margin-top: 100vh; /* Fais en sorte que le plat du jour soit après l'image */
+  background: linear-gradient(to bottom, red, yellow, green); /* Dégradé */
+  padding: 30px;
+}
     .container {
       max-width: 800px;
       margin: 0 auto;
