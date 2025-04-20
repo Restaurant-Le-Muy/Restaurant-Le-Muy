@@ -45,11 +45,13 @@ body {
   
   background: 
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('imagefond.jpg') no-repeat top center;
+    url('imagefond.jpg') no-repeat center top;
+    url('flame.jpg') no-repeat center bottom,
   
   background-size: 100% auto;
   background-attachment: scroll;
   background-repeat: no-repeat;
+  min-height: 200vh; /* Juste pour que les deux images soient visibles */
 }
 
 /* Pour les grands écrans (PC) */
@@ -249,20 +251,6 @@ body.modal-open .menu {
     background-attachment: scroll;
   }
 }
-.bg2 {
-  height: 100vh;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('flame.jpg') no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll;
-}
-body::after {
-  content: "";
-  display: block;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
-}
 
   </style>
 </head>
@@ -274,7 +262,7 @@ body::after {
     <h2 data-aos="fade-up" class="sub-title">Menümüz</h2>
 
     <div class="arrow-down" data-aos="fade-up"></div>
-     <div class="bg2"></div>
+    
     <div class="section" data-aos="fade-up">
       <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
     </div>
