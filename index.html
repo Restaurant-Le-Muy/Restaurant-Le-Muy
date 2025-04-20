@@ -89,44 +89,44 @@ body.modal-open .menu {
 html, body {
   height: 100%;
   margin: 0;
-}
-
-body {
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   color: white;
-  padding: 0;
-  background-color: white; /* Ajout d'une couleur de fond par défaut */
+  position: relative;
 }
-    
-/* La première section qui contient l'image */
-.top-banner {
-  height: 500px; /* Hauteur de l'image de fond */
+
+/* IMAGE EN FOND FIXE EN HAUT DE PAGE */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px; /* hauteur de ton image */
   background-image: url('imagefond.jpg');
-  background-size: cover; /* L'image couvre toute la surface sans être déformée */
+  background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Empêche l'image de se déplacer lors du scroll */
   background-repeat: no-repeat;
+  z-index: -2;
 }
 
-
-/* Le dégradé qui commence après l'image */
+/* DÉGRADÉ QUI COMMENCE APRÈS L’IMAGE */
 body::after {
   content: "";
-  display: block;
-  height: 100%; /* Pour que ça couvre toute la page */
+  position: fixed;
+  top: 500px; /* commence juste après l'image */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
   background: repeating-linear-gradient(
     to bottom,
-    red,         /* Première couleur (rouge) */
-    yellow 20%,  /* Transition douce vers le jaune */
-    green 40%,   /* Transition vers le vert */
-    yellow 60%,  /* Retour vers le jaune */
-    red 80%,     /* Retour vers le rouge */
-    red 100%     /* Retour au début pour répéter */
+    #ff4d4d,     /* rouge clair */
+    #ffeb3b 20%, /* jaune */
+    #4caf50 40%, /* vert */
+    #ffeb3b 60%, /* jaune */
+    #ff4d4d 80%  /* rouge clair */
   );
-  position: absolute;
-  top: 500px;  /* Le dégradé commence juste après l'image */
-  width: 100%;
-  z-index: -1;  /* Pour que le dégradé ne couvre pas le contenu */
 }
     
 /* La section qui commence après l'image */
