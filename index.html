@@ -237,31 +237,25 @@ body.modal-open .menu {
 }
 @media screen and (max-width: 768px) {
   body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
 
-  /* Dégradé pour la première image */
-  background-image: 
-    linear-gradient(to bottom, transparent, black), 
-    url('imagefond.jpg');
-  
-  background-position: top center; /* Aligne la première image */
-  background-size: 100% auto; /* Taille de la première image */
-  background-repeat: no-repeat; /* Pas de répétition */
-  background-attachment: scroll; /* L'image défile avec la page */
-
-  /* Dégradé pour la deuxième image */
-  background-image: 
-    linear-gradient(to top, black, transparent),
-    url('flame.jpg');
-  
-  background-position: top center, 100% center; /* La deuxième image est positionnée en dessous de la première */
-  background-size: 100% auto; /* Taille de la deuxième image */
-  background-repeat: no-repeat; /* Pas de répétition */
-  background-attachment: scroll; /* L'image défile avec la page */
+    /* Dégradé pour la première image */
+    background-image: 
+      linear-gradient(to bottom, transparent, black), 
+      url('imagefond.jpg'), /* Première image */
+      linear-gradient(to top, black, transparent), /* Dégradé pour la deuxième image */
+      url('flame.jpg'); /* Deuxième image */
+    
+    background-position: top center, top center, 100% center; /* Position des images */
+    background-size: 100% auto, 100% auto; /* Taille des images */
+    background-repeat: no-repeat; /* Pas de répétition */
+    background-attachment: scroll; /* L'image défile avec la page */
+  }
 }
+
 
   </style>
 </head>
