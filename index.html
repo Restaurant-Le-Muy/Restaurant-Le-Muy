@@ -86,21 +86,6 @@ body.modal-open .menu {
   opacity: 1;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('imagefond.jpg') no-repeat top center;
-  
-  background-size: 100% auto;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-}
-
     .container {
       position: relative;
       max-width: 800px;
@@ -220,11 +205,15 @@ body {
     transform: translateY(-30px);
   }
 }
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url('imagefond.jpg');
     background-position: center center;
-    background-size: auto 177.78vw; /* 100vw * 16 / 9 pour du 9/16 */
+    background-size: auto 177.78vw; /* Pour du 9/16 en fonction de la largeur */
     background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 }
   </style>
