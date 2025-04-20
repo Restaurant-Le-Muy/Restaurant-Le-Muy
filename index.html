@@ -31,6 +31,10 @@
   #scrollTopBtn {
     display: block !important;  /* Toujours afficher */
   }
+  body {
+    font-family: 'Poppins', sans-serif; /* Réajoute la police sur mobile */
+    color: white; /* Si tu as d'autres couleurs de texte à ajuster, fais-le ici */
+  }
 }
     /* Style pour le bouton hamburger */
 .hamburger {
@@ -215,7 +219,7 @@ body.modal-open .menu {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url('imagefond.jpg');
-    background-position: center center;
+    background-position: top center; /* Image alignée en haut */
     background-size: auto 177.78vw; /* Ajuste le fond en 9/16 */
     background-repeat: no-repeat;
     background-attachment: scroll;
