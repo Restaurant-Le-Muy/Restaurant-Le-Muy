@@ -43,6 +43,7 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
   color: white;
+  background-color: black; /* Applique un fond noir */
   
   background: 
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -245,16 +246,12 @@ body.modal-open .menu {
   aspect-ratio: 9 / 16;  /* Assure que l'image garde le bon ratio */
   background-image: url('flame.jpg'), url('imagefond.jpg'); /* Flame d'abord pour qu'elle soit derrière */
   background-size: cover, cover; /* Ajuste la taille des images pour couvrir tout l'écran */
-  background-position: center top, center; /* Flame positionnée en haut, imagefond centrée */
+  background-position: center 1000px, center; /* Position de flame à 1000px du haut, imagefond centrée */
   background-repeat: no-repeat, no-repeat; /* Evite que les images se répètent */
   z-index: -1; /* S'assure que ces images sont derrière tout le reste du contenu */
   pointer-events: none; /* Les images de fond ne doivent pas interférer avec l'interaction */
 }
 
-body {
-  background-color: black; /* Applique un fond noir */
-  z-index: -2;
-}
   </style>
 </head>
 <body>
