@@ -43,7 +43,6 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
   color: white;
-  background-color: black; /* Applique un fond noir */
   
   background: 
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -251,7 +250,12 @@ body.modal-open .menu {
   z-index: -1; /* S'assure que ces images sont derrière tout le reste du contenu */
   pointer-events: none; /* Les images de fond ne doivent pas interférer avec l'interaction */
 }
-
+body {
+  background-color: black; /* Applique un fond noir */
+  margin: 0;
+  padding: 0;
+}
+    
   </style>
 </head>
 <body>
