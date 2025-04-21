@@ -235,50 +235,52 @@ body.modal-open .menu {
   }
 }
 
-    @media screen and (max-width: 768px) {
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: white;
+    /* Corps de la page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background-color: black; /* Applique un fond noir */
+}
 
+/* Gestion des images de fond pour PC et mobiles */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 16;  /* Garde le bon ratio pour imagefond */
+  background-image: url('imagefond.jpg'), url('flame.jpg'); /* imagefond d'abord, flame ensuite */
+  background-size: cover, cover; /* Les deux images couvrent toute la page */
+  background-position: center, center 1000px; /* Positionnement de imagefond au centre, flame à 1000px du haut */
+  background-repeat: no-repeat, no-repeat; /* Pas de répétition des images */
+  z-index: -1; /* Les images sont derrière le contenu */
+  pointer-events: none; /* Les images de fond ne doivent pas interférer avec l'interaction */
+}
+
+/* Ajustements pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  body {
     background-image: 
-      url('flame.jpg'),
-      url('imagefond.jpg');  /* Réutilise les images dans le même ordre */
+      url('flame.jpg'),   /* Positionne flame à 1000px du haut sur mobile */
+      url('imagefond.jpg'); /* imagefond en arrière-plan */
     
     background-position: 
-      center 1000px,  /* Position de flame.jpg à 1000px du haut sur mobile */
-      center center;  /* Position de imagefond.jpg au centre */
+      center 1000px,    /* Position de flame à 1000px du haut sur mobile */
+      center center;    /* Position de imagefond au centre */
     
     background-size: 
-      cover,          /* Pour flame.jpg */
-      cover;          /* Pour imagefond.jpg */
+      cover,            /* flame prend toute la largeur et la hauteur */
+      cover;            /* imagefond prend toute la largeur et la hauteur */
     
     background-attachment: scroll;
     background-repeat: no-repeat;
   }
 }
 
-   body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  aspect-ratio: 9 / 16;  /* Assure que l'image garde le bon ratio */
-  background-image: url('flame.jpg'), url('imagefond.jpg'); /* Flame d'abord pour qu'elle soit derrière */
-  background-size: cover, cover; /* Ajuste la taille des images pour couvrir tout l'écran */
-  background-position: center 1000px, center; /* Position de flame à 1000px du haut, imagefond centrée */
-  background-repeat: no-repeat, no-repeat; /* Evite que les images se répètent */
-  z-index: -1; /* S'assure que ces images sont derrière tout le reste du contenu */
-  pointer-events: none; /* Les images de fond ne doivent pas interférer avec l'interaction */
-}
-body {
-  background-color: black; /* Applique un fond noir */
-  margin: 0;
-  padding: 0;
-}
-    
+   
   </style>
 </head>
 <body>
