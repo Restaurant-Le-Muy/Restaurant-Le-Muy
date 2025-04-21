@@ -9,13 +9,35 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <style>
-    
-    #scrollTopBtn {
+  /* Style du bouton d'accueil */
+.home-button {
+  position: fixed;        
+  top: 10px;
+  margin-bottom: 30px;              
+  left: 50%;              
+  transform: translateX(-50%); 
+  background-color: rgba(0, 0, 0, 0.6); 
+  color: white;           
+  padding: 8px 100px;      
+  font-size: 14px;        
+  border-radius: 50px;     
+  text-decoration: none;  
+  z-index: 1000;          
+  box-shadow: none;       
+  border: none;           
+  outline: none;          
+}
+
+.home-button:hover {
+  background-color: rgba(0,0, 0, 0.4); 
+}
+
+#scrollTopBtn {
   position: fixed;
   bottom: 30px;
   right: 30px;
   z-index: 9999;
-  background: #6a11cb;
+  background: #dbcd03;
   color: black;
   border: none;
   border-radius: 50%;
@@ -23,45 +45,30 @@
   height: 50px;
   font-size: 24px;
   cursor: pointer;
-  display: block;
 }
 
-/* Ajouter une règle pour la taille mobile */
+/* Ajouter l'animation lorsque le scroll est effectué */
+body:scroll {
+  animation: showScrollButton 1s forwards;
+}
+
 @media screen and (max-width: 768px) {
-  #scrollTopBtn {
-    display: block !important;  /* Toujours afficher */
-  }
-  body {
-    font-family: 'Poppins', sans-serif; /* Réajoute la police sur mobile */
-    color: black; /* Si tu as d'autres couleurs de texte à ajuster, fais-le ici */
-  }
-}
-    
-    /* Par défaut, pour les grands écrans, l'image et la police doivent être correctes */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-  
-  background-size: 100% auto;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  
-}
-
-/* Pour les grands écrans (PC) */
-@media screen and (min-width: 768px) {
   body {
     font-family: 'Poppins', sans-serif;
-    background-size: 100% auto; /* Assure-toi que l'image soit correctement dimensionnée sur PC */
+    color: black; /* texte noir sur mobile */
+    overflow-x: hidden;
+   }
+
+  #scrollTopBtn {
+    display: block !important;  
   }
 }
-    
-    /* Style pour le bouton hamburger */
+
+  #scrollTopBtn {
+    display: block !important;  
+  }
+
+/* Le bouton hamburger pour le menu */
 .hamburger {
   font-size: 30px;
   cursor: pointer;
@@ -74,10 +81,10 @@ body {
   color: white;
 }
 
-/* Style du menu */
+/* Menu style */
 .menu {
   position: fixed;
-  top: 60px; /* Juste sous le bouton */
+  top: 60px;
   right: 20px;
   background-color: rgba(0, 0, 0, 1);
   padding: 20px;
@@ -87,14 +94,15 @@ body {
   max-width: 200px;
   list-style-type: none;
   opacity: 0;
-  transform: translateX(100%); /* Le menu commence à la droite hors de l'écran */
-  transition: transform 0.4s ease, opacity 1s ease; /* Animation de l'apparition */
+  transform: translateX(100%);
+  transition: transform 0.4s ease, opacity 1s ease;
+  animation: none;
 }
 
 .menu.active {
   display: block;
-  opacity: 1; /* Rendre visible */
-  transform: translateX(0); /* Menu glisse dans la vue */
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .menu-item {
@@ -102,113 +110,98 @@ body {
   color: white;
   text-decoration: none;
   margin: 10px 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .menu-item:hover {
   color: #ffeb3b;
 }
 
-/* Animation pour fermer le menu si on clique en dehors */
-body.modal-open .menu {
-  display: block;
-  opacity: 1;
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-    .container {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
+h1 {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 10px;
+  font-size: 3rem;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 3rem;
-    }
+.sub-title {
+  font-size: 3rem;
+  margin-top: -20px;
+  margin-bottom: 150px;
+  color: #e0dfff;
+}
 
-    .sub-title {
-      font-size: 3rem;
-      margin-top: -20px;
-      margin-bottom: 80px;
-      color: #e0dfff;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section h2 {
-      font-size: 1.8rem;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 25px;
-      margin-bottom: 0px;
-    }
-
-    .item {
-      margin-bottom: 50px;
-      padding: 30px 30px;
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 50px;
-      box-shadow: 0 9px 50px rgba(0,0,0,0.9);
-      transition: transform 0.2s ease;
-       min-height: 350px;
-      display: flex;
+.item {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.99);
+  border-radius: 50px;
+  box-shadow: 0 9px 50px rgba(69, 9, 9, 0.9);
+  transition: transform 0.2s ease;
+  min-height: 350px;
+  display: flex;
   flex-direction: column;
-    }
+}
 
-    .item:hover {
-      transform: scale(1.02);
-    }
+.item:hover {
+  transform: scale(1.02);
+}
 
-    .item .title {
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
+.item .title {
+  font-weight: 1000;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+}
 
 .item .price {
-  margin-top: -50px; /* Rapproche le prix vers le haut */
-  margin-bottom: 0; /* Réduit l'espace sous le prix */
-  font-size: 1rem; /* Ajuste la taille du prix */
-  color: #ffeb3b; /* La couleur dorée du prix */
+  margin-top: -150px;
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: #ffeb3b;
 }
 
-    
-    .call {
-      text-align: center;
-      margin-top: 60px;
-    }
+.call {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
 
-    .call a {
-      color: #fff;
-      background-color: #8e2de2;
-      padding: 15px 25px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
+.call a {
+  color: #fff;
+  background-color: #dbcd038e;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
 
-    .call a:hover {
-      background-color: #5d00a2;
-    }
+.call a:hover {
+  background-color: #dbcd03;
+}
 
-    .gunun-yemegi {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.7);
-      display: block;
-      margin-top: 5px;
-    }
-    
-    .gunun-yemegi-plat {
-      font-size: 1.8rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-left: 0px;
-      display: block;
-      margin-top: 5px;
-    }
+.gunun-yemegi {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-top: 5px;
+}
+
+.gunun-yemegi-plat {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 0px;
+  display: block;
+  margin-top: 5px;
+}
 
 .arrow-down {
   width: 0px;
@@ -219,83 +212,147 @@ body.modal-open .menu {
   margin: 30px auto;
   margin-bottom: 150px;
   display: block;
-  animation: bounce 1.2s infinite; /* Animation de rebond */
+  animation: bounce 1.2s infinite;
 }
 
-/* Animation de rebond pour la flèche */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
-  }
+   }
   40% {
     transform: translateY(-80px);
-  }
+   }
   60% {
     transform: translateY(-30px);
-  }
+   }
 }
 
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+   }
+  100% {
+    transform: translateY(50px);
+   }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Commence à droite hors de l'écran */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Se place à sa position finale */
+  }
+}
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   color: white;
-  background-color: black; /* Fond noir en secours si nécessaire */
-
-  background-image: 
-    url('flame.jpg'), 
-    url('imagefond.jpg'); /* Les images dans l'ordre */
-
-  background-position: 
-    center 1000px,   /* Position de flame.jpg à 1000px du haut */
-    center center;   /* Position de imagefond.jpg centré */
-
-  background-size: 
-    cover,          /* Pour flame.jpg */
-    cover;          /* Pour imagefond.jpg */
-
-  background-attachment: scroll;
-  background-repeat: no-repeat;
+  background-color: black;
+  overflow-x: hidden;
+  position: relative;
 }
 
-    @media screen and (max-width: 768px) {
-  body {
-    background-image: 
-      url('flame.jpg'),
-      url('imagefond.jpg');  /* Réutilise les images dans le même ordre */
-    
-    background-position: 
-      center 1000px,  /* Position de flame.jpg à 1000px du haut sur mobile */
-      center center;  /* Position de imagefond.jpg au centre */
-    
-    background-size: 
-      cover,          /* Pour flame.jpg */
-      cover;          /* Pour imagefond.jpg */
-    
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-  }
-}
-
-    body::before {
+/* imagefond au top, avec bon ratio */
+body::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -250px;
   left: 0;
   width: 100%;
-  aspect-ratio: 9 / 16; /* Assure le bon ratio */
-  background-image: url('imagefond.jpg'), url('flame.jpg');
-  background-size: cover, cover; /* Ajuste les images */
-  background-position: center, center 1000px; /* Imagefond centrée, flame à 1000px du haut */
-  background-repeat: no-repeat, no-repeat; /* Pas de répétition */
-  z-index: -1; /* Derrière tout */
-  pointer-events: none; /* Interférera pas avec les clics */
+  height: 100vh; /* prend tout l'écran en hauteur */
+  background-image: url('imagefond.jpg');
+  background-size: cover; /* remplit sans déformer */
+  background-position: center top; /* centré horizontalement, en haut verticalement */
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+  filter: brightness(0.7); /* assombrit l’image */
+  animation: scrollDown 2s ease-in-out infinite alternate;
 }
 
-   
+
+/* flame plus bas */
+body::after {
+  content: "";
+  position: absolute;
+  top: 800px;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background-image: url('flame.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.flame2 {
+  position: absolute;
+  top: 1492px;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background-image: url('flame.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  pointer-events: none;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.flame3 {
+  position: absolute;
+  top: 2183px;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background-image: url('flame.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.flame4 {
+  position: absolute;
+  top: 2876px;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background-image: url('flame.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  pointer-events: none;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.flame5 {
+  position: absolute;
+  top: 3567px;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background-image: url('flame.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  pointer-events: none;
+}
   </style>
 </head>
 <body>
+  <a href="index.html" id="home-button" class="home-button">Accueil</a>
+
 
   <div class="container">
     
@@ -320,7 +377,7 @@ body {
       <div class="price">6€</div>
     </div>
 
-    <div class="section" data-aos="fade-up">
+    <div class="section" data-aos="fade-right">
       <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
     </div>
 
@@ -350,7 +407,7 @@ body {
       <div class="price">6€</div>
     </div>
 
-    <div class="section" data-aos="fade-up">
+    <div class="section" data-aos="fade-right">
       <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
     </div>
 
@@ -365,7 +422,7 @@ body {
       <div class="price">6€</div>
     </div>
 
-    <div class="call">
+    <div class="call" data-aos="fade-up">
       <a href="tel:+33123456789">📞 Réserver par téléphone</a>
     </div>
   </div>
@@ -392,10 +449,16 @@ body {
 </div>
 
 
-   <script src="menu.js"></script>
- <button id="scrollTopBtn" style="display:none; position:fixed; bottom:30px; right:30px; z-index:9999; background:#ff5733; color:black; border:none; border-radius:50%; width:50px; height:50px; font-size:24px; cursor:pointer;">↑</button>
-
-
   
+   <button id="scrollTopBtn" style="display:none;">↑</button>
+
+↑
+</button>
+ <div class="flame2"></div>
+ <div class="flame3"></div>
+ <div class="flame4"></div>
+ <div class="flame5"></div>
+ 
+ <script src="menu.js"></script>
 </body>
 </html>
