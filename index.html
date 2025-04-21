@@ -168,6 +168,28 @@ h1 {
   color: #ffeb3b;
 }
 
+.plat-image {
+  width: 100%;              /* L’image prend toute la largeur du bloc */
+  max-height: 250px;        /* Hauteur max pour éviter que ce soit trop grand */
+  object-fit: cover;        /* Rognage propre pour que l’image remplisse bien sans déformation */
+  border-radius: 30px;      /* Bords arrondis pour matcher ton style */
+  margin-top: 20px;         /* Espace au-dessus de l’image */
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 1); /* Un peu d’ombre pour un effet propre */
+  position: relative;
+/* Dégradé sombre sur les bords et coins */
+-webkit-mask-image: 
+    linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
+  -webkit-mask-composite: destination-in;
+  mask-image: 
+    linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
+  mask-composite: destination-in;
+}
 .call {
   text-align: center;
   margin-top: 70px;
@@ -369,12 +391,20 @@ body::after {
       <div class="title">Le Plat Du Jour</div>
       <div class="sub-title gunun-yemegi">Günün Yemeği</div>
       <div class="price">6€</div>
+      <!-- Envelopper l'image dans un lien -->
+  <a href="kurufasulyepilav.html">
+    <img src="kurufasulyepilav.jpg" alt="Plat du jour" class="plat-image">
+  </a>
     </div>
 
     <div class="item" data-aos="fade-up">
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+      <div class="title">La Soupe Du Jour</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
       <div class="price">6€</div>
+      <!-- Envelopper l'image dans un lien -->
+  <a href="mercimek.html">
+    <img src="mercimek.jpg" alt="Plat du jour" class="plat-image">
+  </a>
     </div>
 
     <div class="section" data-aos="fade-right">
