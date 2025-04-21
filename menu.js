@@ -52,9 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', function() {
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  if (scrollPercentage > 70) {
     scrollTopBtn.style.display = "block"; // Affiche le bouton
   } else {
     scrollTopBtn.style.display = "none"; // Cache le bouton
   }
 });
+
