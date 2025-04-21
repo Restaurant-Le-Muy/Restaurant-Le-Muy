@@ -236,6 +236,30 @@ body.modal-open .menu {
   }
 }
 
+    @media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    background-image: 
+      url('flame.jpg'),
+      url('imagefond.jpg');  /* Réutilise les images dans le même ordre */
+    
+    background-position: 
+      center 1000px,  /* Position de flame.jpg à 1000px du haut sur mobile */
+      center center;  /* Position de imagefond.jpg au centre */
+    
+    background-size: 
+      cover,          /* Pour flame.jpg */
+      cover;          /* Pour imagefond.jpg */
+    
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+  }
+}
+
    body::before {
   content: "";
   position: absolute;
