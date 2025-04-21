@@ -4,7 +4,7 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notre menu</title>
+  <title>Nos Boissons</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
@@ -13,7 +13,7 @@
 .home-button {
   position: fixed;        
   top: 10px;
-  margin-bottom: 30px;              
+  margin-bottom: 0px;              
   left: 50%;              
   transform: translateX(-50%); 
   background-color: rgba(0, 0, 0, 0.6); 
@@ -74,7 +74,7 @@ body:scroll {
   cursor: pointer;
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 10px;
   z-index: 9999;
   background: none;
   border: none;
@@ -128,7 +128,7 @@ body:scroll {
 h1 {
   text-align: center;
   margin-top: 150px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   font-size: 3rem;
 }
 
@@ -142,7 +142,7 @@ h1 {
 .item {
   margin-bottom: 50px;
   padding: 30px;
-  background-color: rgba(0, 0, 0, 0.99);
+  background-color: rgba(0, 0, 0, 98);
   border-radius: 50px;
   box-shadow: 0 9px 50px rgba(69, 9, 9, 0.9);
   transition: transform 0.2s ease;
@@ -168,6 +168,28 @@ h1 {
   color: #ffeb3b;
 }
 
+.plat-image {
+  width: 100%;              /* L’image prend toute la largeur du bloc */
+  max-height: 250px;        /* Hauteur max pour éviter que ce soit trop grand */
+  object-fit: cover;        /* Rognage propre pour que l’image remplisse bien sans déformation */
+  border-radius: 30px;      /* Bords arrondis pour matcher ton style */
+  margin-top: 20px;         /* Espace au-dessus de l’image */
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 1); /* Un peu d’ombre pour un effet propre */
+  position: relative;
+/* Dégradé sombre sur les bords et coins */
+-webkit-mask-image: 
+    linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
+  -webkit-mask-composite: destination-in;
+  mask-image: 
+    linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
+  mask-composite: destination-in;
+}
 .call {
   text-align: center;
   margin-top: 70px;
@@ -197,18 +219,19 @@ h1 {
 
 .section {
   font-size: 1rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
   color: rgba(255, 255, 255, 1);
   margin-left: 0px;
   display: block;
-  margin-top: -130px;
 }
 
 .gunun-yemegi-plat {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.7);
   margin-left: 0px;
   display: block;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 .arrow-down {
@@ -218,7 +241,7 @@ h1 {
   border-right: 10px solid transparent;
   border-top: 20px solid white;
   margin: 30px auto;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   display: block;
   animation: bounce 1.2s infinite;
 }
@@ -311,35 +334,43 @@ body::after {
     <h2 data-aos="fade-up" class="sub-title">İçeceklerimiz</h2>
 
     <div class="arrow-down" data-aos="fade-up"></div>
-    
     <div class="section" data-aos="fade-up">
       <h2>Nos Boissons Fraîches <span class="gunun-yemegi-plat">Soğuk içeceklerimiz</span></h2>
     </div>
 
     <div class="item" data-aos="fade-up">
+
       <div class="title">Boissons fraîches sans alcool</div>
       <div class="sub-title gunun-yemegi">Alkolsüz soğuk içecekler</div>
       <div class="price">6€</div>
+      <!-- Envelopper l'image dans un lien -->
+  <a href="kurufasulyepilav.html">
+    <img src="kurufasulyepilav.jpg" alt="Plat du jour" class="plat-image">
+  </a>
     </div>
 
     <div class="item" data-aos="fade-up">
       <div class="title">Boissons fraîches alcoolisées</div>
       <div class="sub-title gunun-yemegi">Alkollü soğuk içecekler</div>
       <div class="price">6€</div>
+      <!-- Envelopper l'image dans un lien -->
+  <a href="mercimek.html">
+    <img src="mercimek.jpg" alt="Plat du jour" class="plat-image">
+  </a>
     </div>
 
     <div class="section" data-aos="fade-right">
-      <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
+      <h2>Nos Boissons Chaudes <span class="gunun-yemegi-plat">Sıcak İçeceklerimiz</span></h2>
     </div>
 
     <div class="item" data-aos="fade-up">
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+      <div class="title">Café</div>
+      <div class="sub-title gunun-yemegi">Kahve</div>
       <div class="price">6€</div>
     </div>
     <div class="item" data-aos="fade-up">
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+      <div class="title">Thé</div>
+      <div class="sub-title gunun-yemegi">Çay</div>
       <div class="price">6€</div>
     </div>
 
