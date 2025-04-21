@@ -13,7 +13,7 @@
 .home-button {
   position: fixed;        
   top: 10px;
-  margin-bottom: 30px;              
+  margin-bottom: 0px;              
   left: 50%;              
   transform: translateX(-50%); 
   background-color: rgba(0, 0, 0, 0.6); 
@@ -74,7 +74,7 @@ body:scroll {
   cursor: pointer;
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 10px;
   z-index: 9999;
   background: none;
   border: none;
@@ -128,7 +128,7 @@ body:scroll {
 h1 {
   text-align: center;
   margin-top: 150px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   font-size: 3rem;
 }
 
@@ -142,7 +142,7 @@ h1 {
 .item {
   margin-bottom: 50px;
   padding: 30px;
-  background-color: rgba(0, 0, 0, 0.99);
+  background-color: rgba(0, 0, 0, 98);
   border-radius: 50px;
   box-shadow: 0 9px 50px rgba(69, 9, 9, 0.9);
   transition: transform 0.2s ease;
@@ -219,10 +219,11 @@ h1 {
 
 .section {
   font-size: 1rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
   color: rgba(255, 255, 255, 1);
   margin-left: 0px;
   display: block;
-  margin-top: -50px;
 }
 
 .gunun-yemegi-plat {
@@ -240,7 +241,7 @@ h1 {
   border-right: 10px solid transparent;
   border-top: 20px solid white;
   margin: 30px auto;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   display: block;
   animation: bounce 1.2s infinite;
 }
@@ -309,10 +310,10 @@ body::before {
 body::after {
   content: "";
   position: absolute;
-  top: 800px;
+  top: 1px;
   left: 0;
   width: 100%;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 9 / 100;
   background-image: url('flame.jpg');
   background-size: cover;
   background-position: center;
@@ -321,63 +322,6 @@ body::after {
   pointer-events: none;
 }
 
-.flame2 {
-  position: absolute;
-  top: 1492px;
-  left: 0;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  background-image: url('flame.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  pointer-events: none;
-  transform: rotate(180deg) scaleX(-1);
-}
-
-.flame3 {
-  position: absolute;
-  top: 2183px;
-  left: 0;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  background-image: url('flame.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  pointer-events: none;
-}
-
-.flame4 {
-  position: absolute;
-  top: 2876px;
-  left: 0;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  background-image: url('flame.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  pointer-events: none;
-  transform: rotate(180deg) scaleX(-1);
-}
-
-.flame5 {
-  position: absolute;
-  top: 3567px;
-  left: 0;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  background-image: url('flame.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  pointer-events: none;
-}
   </style>
 </head>
 <body>
@@ -390,12 +334,12 @@ body::after {
     <h2 data-aos="fade-up" class="sub-title">Menümüz</h2>
 
     <div class="arrow-down" data-aos="fade-up"></div>
-    
     <div class="section" data-aos="fade-up">
       <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
     </div>
 
     <div class="item" data-aos="fade-up">
+
       <div class="title">Le Plat Du Jour</div>
       <div class="sub-title gunun-yemegi">Günün Yemeği</div>
       <div class="price">6€</div>
@@ -492,11 +436,6 @@ body::after {
 
 ↑
 </button>
- <div class="flame2"></div>
- <div class="flame3"></div>
- <div class="flame4"></div>
- <div class="flame5"></div>
- 
  <script src="menu.js"></script>
 </body>
 </html>
