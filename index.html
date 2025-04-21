@@ -236,25 +236,24 @@ body.modal-open .menu {
   }
 }
 
-    body::before {
+   body::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  aspect-ratio: 9 / 16;
-  background-image:
-    url('imagefond.jpg'),
-    url('flame.jpg');
-  background-size: cover, cover;
-  background-position: center, center 1000px;
-  background-repeat: no-repeat;
-  z-index: -1;
-  pointer-events: none;
+  aspect-ratio: 9 / 16;  /* Assure que l'image garde le bon ratio */
+  background-image: url('flame.jpg'), url('imagefond.jpg'); /* Flame d'abord pour qu'elle soit derrière */
+  background-size: cover, cover; /* Ajuste la taille des images pour couvrir tout l'écran */
+  background-position: center top, center; /* Flame positionnée en haut, imagefond centrée */
+  background-repeat: no-repeat, no-repeat; /* Evite que les images se répètent */
+  z-index: -1; /* S'assure que ces images sont derrière tout le reste du contenu */
+  pointer-events: none; /* Les images de fond ne doivent pas interférer avec l'interaction */
 }
-  
+
 body {
   background-color: black; /* Applique un fond noir */
+  z-index: -2;
 }
   </style>
 </head>
