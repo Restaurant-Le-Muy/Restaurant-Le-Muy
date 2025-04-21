@@ -235,31 +235,7 @@ body.modal-open .menu {
     transform: translateY(-30px);
   }
 }
-@media screen and (max-width: 768px) {
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: white;
 
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url('flame.jpg');
-      
-    
-    background-position: 
-      center center,   /* Pour le dégradé */
-      center 1000px,    /* Position de flame.jpg */
-
-    background-size: 
-      cover,           /* Pour le dégradé */
-      auto 177.78vw,   /* Respect du ratio 9/16 pour flame.jpg */
-
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    z-index: 0;  /* Place flame au-dessus de l'autre image */
-  }
-}
     body::before {
   content: "";
   position: absolute;
@@ -267,15 +243,15 @@ body.modal-open .menu {
   left: 0;
   width: 100%;
   aspect-ratio: 9 / 16;
-  background-image: url('imagefond.jpg');
-  background-size: cover;
-  background-position: center;
+  background-image:
+    url('imagefond.jpg'),
+    url('flame.jpg');
+  background-size: cover, cover;
+  background-position: center, center 1000px;
   background-repeat: no-repeat;
   z-index: -1;
   pointer-events: none;
 }
-
-
   
 body {
   background-color: black; /* Applique un fond noir */
