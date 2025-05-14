@@ -59,3 +59,10 @@ window.addEventListener('scroll', function() {
   }
 });
 
+const swiper = new Swiper('.mySwiper', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+});
+
+
