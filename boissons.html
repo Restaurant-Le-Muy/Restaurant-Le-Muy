@@ -4,9 +4,11 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nos Boissons</title>
+  <title>Boissons</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 
   <style>
   /* Style du bouton d'accueil */
@@ -133,7 +135,7 @@ h1 {
 }
 
 .sub-title {
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin-top: -20px;
   margin-bottom: 150px;
   color: #e0dfff;
@@ -144,7 +146,7 @@ h1 {
   padding: 30px;
   background-color: rgba(0, 0, 0, 98);
   border-radius: 50px;
-  box-shadow: 0 9px 50px rgba(69, 9, 9, 0.9);
+  box-shadow: 0 9px 10px rgba(69, 9, 9, 0.9);
   transition: transform 0.2s ease;
   min-height: 350px;
   display: flex;
@@ -277,6 +279,8 @@ h1 {
     transform: translateX(0); /* Se place à sa position finale */
   }
 }
+
+
 body {
   margin: 0;
   padding: 0;
@@ -291,7 +295,7 @@ body {
 body::before {
   content: "";
   position: absolute;
-  top: -250px;
+  top: -200px;
   left: 0;
   width: 100%;
   height: 100vh; /* prend tout l'écran en hauteur */
@@ -322,6 +326,22 @@ body::after {
   pointer-events: none;
 }
 
+@keyframes swipeHint {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(10px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.swiper .swiper-slide:first-child {
+  animation: swipeHint 2s ease-in-out infinite;
+}
+
+.item-compact {
+  min-height: auto !important;
+}
+
   </style>
 </head>
 <body>
@@ -335,73 +355,264 @@ body::after {
 
     <div class="arrow-down" data-aos="fade-up"></div>
     <div class="section" data-aos="fade-up">
-      <h2>Nos Boissons Fraîches <span class="gunun-yemegi-plat">Soğuk içeceklerimiz</span></h2>
+      <h2>Boissons fraîches<span class="gunun-yemegi-plat">Soğuk İçecekler</span></h2>
     </div>
 
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+    
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boissons Sans Alcool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Alkolsüz İçecekler</div>
+            <div class="price">🢃</div>
+            <a href="boissonssansalcool.html">
+              <img src="boissonssansalcool.webp" alt="Plat du jour" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/2</div>
+
+          </div>
+        </div>
+    
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boissons Alcoolisées&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Alkollü İçecekler</div>
+            <div class="price">15€</div>
+            <a href="boissons.html">
+              <img src="boissons.png" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">2/2</div>
+
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+  <!-- Slide 1 -->
+  <div class="swiper-slide">
     <div class="item" data-aos="fade-up">
-
-      <div class="title">Boissons fraîches sans alcool</div>
-      <div class="sub-title gunun-yemegi">Alkolsüz soğuk içecekler</div>
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Boissons Alcoolisées&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Alkollü İçecekler</div>
       <div class="price">6€</div>
-      <!-- Envelopper l'image dans un lien -->
-  <a href="kurufasulyepilav.html">
-    <img src="kurufasulyepilav.jpg" alt="Plat du jour" class="plat-image">
-  </a>
-    </div>
+      <a href="mercimek.html">
+        <img src="mercimek.jpg" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/5</div>
 
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="swiper-slide">
     <div class="item" data-aos="fade-up">
-      <div class="title">Boissons fraîches alcoolisées</div>
-      <div class="sub-title gunun-yemegi">Alkollü soğuk içecekler</div>
-      <div class="price">6€</div>
-      <!-- Envelopper l'image dans un lien -->
-  <a href="mercimek.html">
-    <img src="mercimek.jpg" alt="Plat du jour" class="plat-image">
-  </a>
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
+      <div class="price">7€</div>
+      <a href="mercimek.html">
+        <img src="tavukcorbasi.png" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">2/5</div>
+
     </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
+      <div class="price">6€</div>
+      <a href="mercimek.html">
+        <img src="ezogelin.png" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">3/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
+      <div class="price">7€</div>
+      <a href="mercimek.html">
+        <img src="kellepaca.jpg" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">4/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
+      <div class="price">7€</div>
+      <a href="mercimek.html">
+        <img src="iskembe.webp" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">5/5</div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
 
     <div class="section" data-aos="fade-right">
-      <h2>Nos Boissons Chaudes <span class="gunun-yemegi-plat">Sıcak İçeceklerimiz</span></h2>
+      <h2>Boissons Chaudes<span class="gunun-yemegi-plat">Sıcak İçecekler</span></h2>
     </div>
 
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+  <!-- Slide 1 -->
+  <div class="swiper-slide">
     <div class="item" data-aos="fade-up">
-      <div class="title">Café</div>
-      <div class="sub-title gunun-yemegi">Kahve</div>
-      <div class="price">6€</div>
-    </div>
-    <div class="item" data-aos="fade-up">
-      <div class="title">Thé</div>
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thé&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
       <div class="sub-title gunun-yemegi">Çay</div>
-      <div class="price">6€</div>
-    </div>
+      <div class="price"> </div>
+      <a href="mercimek.html">
+        <img src="cay.jpg" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/5</div>
 
-    <div class="section" data-aos="fade-up">
-      <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Café&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Kahve</div>
+      <div class="price">1,5€</div>
+      <a href="mercimek.html">
+        <img src="cafe.webp" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">2/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Noisette&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Sütlü Kahve</div>
+      <div class="price">1,5€</div>
+      <a href="mercimek.html">
+        <img src="noisette.webp" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">3/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cappuccino&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi"> </div>
+      <div class="price">3,5€</div>
+      <a href="mercimek.html">
+        <img src="cappuccino.jpg" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">4/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Verre De Lait&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Bardakta Süt</div>
+      <div class="price">3€</div>
+      <a href="mercimek.html">
+        <img src="lait.jpg" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">5/5</div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+
+    
+    <div class="section" data-aos="fade-right">
+      <h2>Nos Menus Classiques<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
     </div>
 
     <div class="item" data-aos="fade-up">
       <div class="title">Le Plat Du Jour</div>
       <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
     </div>
+
+    
+    <div class="section" data-aos="fade-right">
+      <h2>Nos Sandwichs<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
+    </div>
+
     <div class="item" data-aos="fade-up">
       <div class="title">Le Plat Du Jour</div>
       <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
     </div>
 
     <div class="section" data-aos="fade-right">
-      <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
+      <h2>Nos Plats<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
     </div>
 
     <div class="item" data-aos="fade-up">
       <div class="title">Le Plat Du Jour</div>
       <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
     </div>
+
+    <div class="section" data-aos="fade-right">
+      <h2>Nos Boissons<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
+    </div>
+
     <div class="item" data-aos="fade-up">
       <div class="title">Le Plat Du Jour</div>
       <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
+    </div>
+
+    <div class="section" data-aos="fade-right">
+      <h2>UNNAMED SECTION<span class="gunun-yemegi-plat">UNNAMED SECTION</span></h2>
+    </div>
+
+    <div class="item" data-aos="fade-up">
+      <div class="title">UNNAMED SECTION</div>
+      <div class="sub-title gunun-yemegi">UNNAMED SECTION</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
     </div>
 
     <div class="call" data-aos="fade-up">
@@ -433,9 +644,9 @@ body::after {
 
   
    <button id="scrollTopBtn" style="display:none;">↑</button>
-
-↑
 </button>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
  <script src="menu.js"></script>
 </body>
 </html>
