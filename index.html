@@ -7,6 +7,8 @@
   <title>Notre menu</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 
   <style>
   /* Style du bouton d'accueil */
@@ -144,7 +146,7 @@ h1 {
   padding: 30px;
   background-color: rgba(0, 0, 0, 98);
   border-radius: 50px;
-  box-shadow: 0 9px 50px rgba(69, 9, 9, 0.9);
+  box-shadow: 0 9px 10px rgba(69, 9, 9, 0.9);
   transition: transform 0.2s ease;
   min-height: 350px;
   display: flex;
@@ -174,21 +176,21 @@ h1 {
   object-fit: cover;        /* Rognage propre pour que l’image remplisse bien sans déformation */
   border-radius: 30px;      /* Bords arrondis pour matcher ton style */
   margin-top: 20px;         /* Espace au-dessus de l’image */
-  filter: drop-shadow(0 5px 50px rgba(0, 0, 0, 1));
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 1); /* Un peu d’ombre pour un effet propre */
   position: relative;
-  /* Dégradé sombre sur les bords et coins */
+/* Dégradé sombre sur les bords et coins */
 -webkit-mask-image: 
     linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
     linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
     linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
     linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
--webkit-mask-composite: destination-in;
-mask-image: 
+  -webkit-mask-composite: destination-in;
+  mask-image: 
     linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
     linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
     linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
     linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
-mask-composite: destination-in;
+  mask-composite: destination-in;
 }
 .call {
   text-align: center;
@@ -277,6 +279,8 @@ mask-composite: destination-in;
     transform: translateX(0); /* Se place à sa position finale */
   }
 }
+
+
 body {
   margin: 0;
   padding: 0;
@@ -322,23 +326,20 @@ body::after {
   pointer-events: none;
 }
 
-   .image-wrapper {
-  position: relative;
-  display: inline-block;
+@keyframes swipeHint {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(10px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
 }
 
-.image-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 30px;
-  background:
-    linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%),
-    linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%),
-    linear-gradient(to left, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%),
-    linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%);
-  pointer-events: none;
-  z-index: 2;
+.swiper .swiper-slide:first-child {
+  animation: swipeHint 2s ease-in-out infinite;
+}
+
+.item-compact {
+  min-height: auto !important;
 }
 
   </style>
@@ -357,72 +358,292 @@ body::after {
       <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
     </div>
 
-    <div class="item" data-aos="fade-up">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+    
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="kurufasulyepilav.html">
+              <img src="kurufasulyepilav.jpg" alt="Plat du jour" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/9</div>
 
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
-      <!-- Envelopper l'image dans un lien -->
- <div class="image-wrapper">
-  <a href="kurufasulyepilav.html">
-    <img src="kurufasulyepilav.jpg" alt="Plat du jour" class="plat-image">
-  </a>
-</div>
+          </div>
+        </div>
+    
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="mercimek.html">
+              <img src="tavukpilav.jpg" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">2/9</div>
+
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="mercimek.html">
+              <img src="kavurma.jpg" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">3/9</div>
+
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="mercimek.html">
+              <img src="musakka.jpg" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">4/9</div>
+
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="mercimek.html">
+              <img src="karniyarik.webp" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">5/9</div>
+
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="mercimek.html">
+              <img src="tavukguvec.jpg" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">6/9</div>
+
+          </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="mercimek.html">
+              <img src="etguvec.webp" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">7/9</div>
+
+          </div>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="mercimek.html">
+              <img src="haslama.jpg" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">8/9</div>
+
+          </div>
+        </div>
+
+        <!-- Slide 9 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+            <div class="price">15€</div>
+            <a href="mercimek.html">
+              <img src="sulukofte.jpg" alt="Soupe" class="plat-image">
+            </a>
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">9/9</div>
+
+          </div>
+        </div>
+    
+      </div>
     </div>
+    
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
 
+  <!-- Slide 1 -->
+  <div class="swiper-slide">
     <div class="item" data-aos="fade-up">
-      <div class="title">La Soupe Du Jour</div>
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
       <div class="sub-title gunun-yemegi">Günün Çorbası</div>
       <div class="price">6€</div>
-      <!-- Envelopper l'image dans un lien -->
-  <a href="mercimek.html">
-    <img src="mercimek.jpg" alt="Plat du jour" class="plat-image">
-  </a>
+      <a href="mercimek.html">
+        <img src="mercimek.jpg" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
+      <div class="price">7€</div>
+      <a href="mercimek.html">
+        <img src="tavukcorbasi.png" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">2/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
+      <div class="price">6€</div>
+      <a href="mercimek.html">
+        <img src="ezogelin.png" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">3/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
+      <div class="price">7€</div>
+      <a href="mercimek.html">
+        <img src="kellepaca.jpg" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">4/5</div>
+
+    </div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="swiper-slide">
+    <div class="item" data-aos="fade-up">
+      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Soupe Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+      <div class="sub-title gunun-yemegi">Günün Çorbası</div>
+      <div class="price">7€</div>
+      <a href="mercimek.html">
+        <img src="iskembe.webp" alt="Soupe" class="plat-image">
+      </a>
+      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">5/5</div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+
+    <div class="section" data-aos="fade-right">
+      <h2>Petit Déjeuner<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
+    </div>
+
+    <div class="item item-compact" data-aos="fade-up">
+      <div class="title"> </div>
+      <div class="sub-title gunun-yemegi"> </div>
+      <div class="price">12€</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
+    </div>
+
+    
+    <div class="section" data-aos="fade-right">
+      <h2>Nos Menus Classiques<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
+    </div>
+
+    <div class="item" data-aos="fade-up">
+      <div class="title">Le Plat Du Jour</div>
+      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
+    </div>
+
+    
+    <div class="section" data-aos="fade-right">
+      <h2>Nos Sandwichs<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
+    </div>
+
+    <div class="item" data-aos="fade-up">
+      <div class="title">Le Plat Du Jour</div>
+      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
     </div>
 
     <div class="section" data-aos="fade-right">
-      <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
+      <h2>Nos Plats<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
     </div>
 
     <div class="item" data-aos="fade-up">
       <div class="title">Le Plat Du Jour</div>
       <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
-    </div>
-    <div class="item" data-aos="fade-up">
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
-    </div>
-
-    <div class="section" data-aos="fade-up">
-      <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
-    </div>
-
-    <div class="item" data-aos="fade-up">
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
-    </div>
-    <div class="item" data-aos="fade-up">
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
     </div>
 
     <div class="section" data-aos="fade-right">
-      <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
+      <h2>Nos Boissons<span class="gunun-yemegi-plat">İçeceklerimiz</span></h2>
     </div>
 
     <div class="item" data-aos="fade-up">
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
+      <div class="title">Toutes Nos Boissons</div>
+      <div class="sub-title gunun-yemegi">Tüm İçeceklerimiz</div>
+      <div class="price">🢃</div>
+      <a href="boissons.html">
+        <img src="boissons.png" alt="Soupe" class="plat-image">
+      </a>
     </div>
+
+    <div class="section" data-aos="fade-right">
+      <h2>UNNAMED SECTION<span class="gunun-yemegi-plat">UNNAMED SECTION</span></h2>
+    </div>
+
     <div class="item" data-aos="fade-up">
-      <div class="title">Le Plat Du Jour</div>
-      <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-      <div class="price">6€</div>
+      <div class="title">UNNAMED SECTION</div>
+      <div class="sub-title gunun-yemegi">UNNAMED SECTION</div>
+      <div class="price">🢃</div>
+      <a href="mercimek.html">
+        <img src="kahvalti.png" alt="Soupe" class="plat-image">
+      </a>
     </div>
 
     <div class="call" data-aos="fade-up">
@@ -454,9 +675,9 @@ body::after {
 
   
    <button id="scrollTopBtn" style="display:none;">↑</button>
-
-↑
 </button>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
  <script src="menu.js"></script>
 </body>
 </html>
