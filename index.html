@@ -174,9 +174,22 @@ h1 {
   object-fit: cover;        /* Rognage propre pour que l’image remplisse bien sans déformation */
   border-radius: 30px;      /* Bords arrondis pour matcher ton style */
   margin-top: 20px;         /* Espace au-dessus de l’image */
-  box-shadow: 0 5px 50px rgba(0, 0, 0, 1); /* Un peu d’ombre pour un effet propre */
+  filter: drop-shadow(0 5px 50px rgba(0, 0, 0, 1));
   position: relative;
-
+  /* Dégradé sombre sur les bords et coins */
+-webkit-mask-image: 
+    linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
+-webkit-mask-composite: destination-in;
+mask-image: 
+    linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
+mask-composite: destination-in;
+}
 .call {
   text-align: center;
   margin-top: 70px;
