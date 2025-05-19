@@ -129,7 +129,7 @@ body:scroll {
 
 h1 {
   text-align: center;
-  margin-top: 150px;
+  margin-top: -80px;
   margin-bottom: 0px;
   font-size: 3rem;
 }
@@ -151,6 +151,8 @@ h1 {
   min-height: 350px;
   display: flex;
   flex-direction: column;
+    max-width: 100%;
+  box-sizing: border-box;
 }
 
 .item:hover {
@@ -172,7 +174,7 @@ h1 {
 
 .plat-image {
   width: 100%;
-  max-height: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 30px;
   margin-top: 20px;
@@ -242,8 +244,9 @@ mask-image: radial-gradient(ellipse at center,
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 20px solid white;
-  margin: 30px auto;
-  margin-bottom: 50px;
+  margin: 0px auto;
+  margin-top: -300px;
+  margin-bottom: 0px;
   display: block;
   animation: bounce 1.2s infinite;
 }
@@ -344,6 +347,14 @@ body::after {
   animation: swipeHint 2s ease-in-out infinite;
 }
 
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 .item-compact {
   min-height: auto !important;
 }
@@ -354,19 +365,25 @@ padding-bottom: 10px;
 }
 
 .snap-section {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
 }
 
 .wide-item {
-  max-width: 900px; /* ou la largeur que tu veux */
-  margin: 0 auto;
   width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
 }
+
+
   </style>
 </head>
 <body>
@@ -377,30 +394,32 @@ padding-bottom: 10px;
     
     <h1 data-aos="fade-up">Notre Menu</h1>
     <h2 data-aos="fade-up" class="sub-title">Menümüz</h2>
+  </div>
+</section>
+<div class="arrow-down" data-aos="fade-up"></div>
 
-    <div class="arrow-down" data-aos="fade-up"></div>
+    <section class="snap-section">
+  <div class="swiper mySwiper">
+
+    
     <div class="section" data-aos="fade-up">
       <h2>Plats du jour <span class="gunun-yemegi-plat">Günün Yemekleri</span></h2>
     </div>
 
-</section>
-<section class="snap-section">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-    
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <div class="item" data-aos="fade-up">
-            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
-            <div class="sub-title gunun-yemegi">Günün Yemeği</div>
-            <div class="price">15€</div>
-            <a href="kurufasulyepilav.html">
-              <img src="kurufasulyepilav.jpg" alt="Plat du jour" class="plat-image">
-            </a>
-            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/9</div>
+    <div class="swiper-wrapper">
 
-          </div>
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="item" data-aos="fade-up">
+          <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le Plat Du Jour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+          <div class="sub-title gunun-yemegi">Günün Yemeği</div>
+          <div class="price">15€</div>
+          <a href="kurufasulyepilav.html">
+            <img src="kurufasulyepilav.jpg" alt="Plat du jour" class="plat-image">
+          </a>
+          <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/9</div>
         </div>
+      </div>
     
         <!-- Slide 2 -->
         <div class="swiper-slide">
@@ -517,7 +536,8 @@ padding-bottom: 10px;
       </div>
     </div>
     </section>
-    <section class="snap-section">
+
+    <section class="snap-section" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
 
@@ -594,46 +614,47 @@ padding-bottom: 10px;
   </div>
 </div>
 </section>
-<div class="container">
-<div style="margin-top: 150px; margin-bottom: -80px;">
-    <div class="section" data-aos="fade-right">
-      <h2>Petit Déjeuner<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
-    </div>
-    </div>
-<section class="snap-section">
-    <div class="item wide-item" data-aos="fade-up">
-      <div class="title">Petit Déjeuner</div>
-      <div class="sub-title gunun-yemegi">Kahvaltı</div>
-      <div class="price">12€</div>
-      <a href="petitdejeuner.html">
-        <img src="kahvalti.png" alt="Soupe" class="plat-image">
-      </a>
-</div>
-    </section>
 
-<div class="container">
-  <div style="margin-top: 150px; margin-bottom: -50px;">
+<section class="snap-section style=height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div class="container">
+
+      <div class="section" data-aos="fade-right">
+        <h2>Petit Déjeuner<span class="gunun-yemegi-plat">Kahvaltı</span></h2>
+      </div>
+
+      <div class="item wide-item" data-aos="fade-up">
+        <div class="title">Petit Déjeuner</div>
+        <div class="sub-title gunun-yemegi">Kahvaltı</div>
+        <div class="price">12€</div>
+        <a href="petitdejeuner.html">
+          <img src="kahvalti.png" alt="Soupe" class="plat-image">
+        </a>
+      </div>
+      
+
+  </div>
+</section>
+
+<section class="snap-section" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div class="container" style="transform: translateY(-120px);">
+
     <div class="section" data-aos="fade-right">
       <h2>Nos Plats Spéciaux<span class="gunun-yemegi-plat">Özel Yemeklerimiz</span></h2>
     </div>
-    </div>
-</div>
 
-    <section class="snap-section">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
 
-  <!-- Slide 1 -->
-  <div class="swiper-slide">
-    <div class="item" data-aos="fade-up">
-      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Pizza Turque (sur place)&nbsp;&nbsp;&nbsp;&nbsp;→</div>
-      <div class="sub-title gunun-yemegi">Lahmacun<br>x3</div>
-      <div class="price">15€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
-      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/9</div>
-
-    </div>
-  </div>
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Pizza Turque (sur place)&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Lahmacun<br>x3</div>
+            <div class="price">15€</div>
+            <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/9</div>
+          </div>
+        </div>
 
   <!-- Slide 2 -->
   <div class="swiper-slide">
@@ -733,28 +754,28 @@ padding-bottom: 10px;
 
     </div>
 </div>
+  </div>
 </section>
-<div class="container">
-<div style="margin-top: 150px; margin-bottom: -50px;">
+<section class="snap-section" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+  <div class="container" style="transform: translateY(-120px);">
+
     <div class="section" data-aos="fade-right">
       <h2>Nos Plats en Assiette<span class="gunun-yemegi-plat">Tabak Menülerimiz</span></h2>
     </div>
-    </div>
-<section class="snap-section">
+
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
 
-  <!-- Slide 1 -->
-  <div class="swiper-slide">
-    <div class="item" data-aos="fade-up">
-      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Côtelettes d’Agneau&nbsp;&nbsp;&nbsp;&nbsp;→</div>
-      <div class="sub-title gunun-yemegi">Kuzu Pirzola<br>assiette</div>
-      <div class="price">20€</div>
-        <img src="pirzola.png" alt="Soupe" class="plat-image">
-      <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/8</div>
-
-    </div>
-  </div>
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Côtelettes d’Agneau&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Kuzu Pirzola<br>assiette</div>
+            <div class="price">20€</div>
+            <img src="pirzola.png" alt="Soupe" class="plat-image">
+            <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">1/8</div>
+          </div>
+        </div>
 
   <!-- Slide 2 -->
   <div class="swiper-slide">
@@ -841,29 +862,29 @@ padding-bottom: 10px;
   </div>
 </div>
 </section>
-<div class="container">
-<div style="margin-top: 150px; margin-bottom: -50px;">
-        <div class="section" data-aos="fade-right">
+<section class="snap-section" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+  <div class="container" style="transform: translateY(-120px);">
+
+    <div class="section" data-aos="fade-right">
       <h2>Nos Sandwichs<span class="gunun-yemegi-plat">Sandviçlerimiz</span></h2>
     </div>
-</div>
 
-    <section class="snap-section">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
 
-  <!-- Slide 1 -->
-  <div class="swiper-slide">
-    <div class="item" data-aos="fade-up">
-      <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Sandwich Döner Kebab&nbsp;&nbsp;&nbsp;&nbsp;→</div>
-      <div class="sub-title gunun-yemegi">Döner Sandviç</div>
-      <div class="price">10€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
-      <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Frites et salades incluses - disponibles en pain classique ou galette<br>Patates kızartması ve salata dahil - ekmek veya lavaş arasında servis edilir</div>
-
-    </div>
-  </div>
-
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="item" data-aos="fade-up">
+            <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Sandwich Döner Kebab&nbsp;&nbsp;&nbsp;&nbsp;→</div>
+            <div class="sub-title gunun-yemegi">Döner Sandviç</div>
+            <div class="price">10€</div>
+            <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+            <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">
+              Frites et salades incluses - disponibles en pain classique ou galette<br>
+              Patates kızartması ve salata dahil - ekmek veya lavaş arasında servis edilir
+            </div>
+          </div>
+        </div>
    <!-- Slide 2 -->
   <div class="swiper-slide">
     <div class="item" data-aos="fade-up">
@@ -975,7 +996,8 @@ padding-bottom: 10px;
     </div>
   </div>
   </section>
-<section class="snap-section">
+<section class="snap-section" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div class="container">
     <div class="item" data-aos="fade-up">
       <div class="title">Toutes Nos Boissons</div>
       <div class="sub-title gunun-yemegi">Tüm İçeceklerimiz</div>
@@ -984,7 +1006,7 @@ padding-bottom: 10px;
         <img src="boissons.png" alt="Soupe" class="plat-image">
       </a>
     </div>
-</div>
+  </div>
 </section>
 
     <div class="section" data-aos="fade-right">
