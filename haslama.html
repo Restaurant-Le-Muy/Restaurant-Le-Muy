@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Dejeuner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+  <style>
+  /* Style du bouton d'accueil */
+.home-button {
+  position: fixed;        
+  top: 10px;
+  margin-bottom: 0px;              
+  left: 50%;              
+  transform: translateX(-50%); 
+  background-color: rgba(0, 0, 0, 0.6); 
+  color: white;           
+  padding: 8px 100px;      
+  font-size: 14px;        
+  border-radius: 50px;     
+  text-decoration: none;  
+  z-index: 1000;          
+  box-shadow: none;       
+  border: none;           
+  outline: none;          
+}
+
+.home-button:hover {
+  background-color: rgba(0,0, 0, 0.4); 
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  background: #dbcd03;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Ajouter l'animation lorsque le scroll est effectué */
+body:scroll {
+  animation: showScrollButton 1s forwards;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: black; /* texte noir sur mobile */
+    overflow-x: hidden;
+   }
+
+  #scrollTopBtn {
+    display: block !important;  
+  }
+}
+
+  #scrollTopBtn {
+    display: block !important;  
+  }
+
+/* Le bouton hamburger pour le menu */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  z-index: 9999;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* Menu style */
+.menu {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  max-width: 200px;
+  list-style-type: none;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.4s ease, opacity 1s ease;
+  animation: none;
+}
+
+.menu.active {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu-item {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.menu-item:hover {
+  color: #ffeb3b;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  font-size: 3rem;
+}
+
+.sub-title {
+  font-size: 3rem;
+  margin-top: -20px;
+  margin-bottom: 150px;
+  color: #e0dfff;
+}
+
+.item {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 98);
+  border-radius: 50px;
+  box-shadow: 0 9px 10px rgba(69, 9, 9, 0.9);
+  transition: transform 0.2s ease;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item:hover {
+  transform: scale(1.02);
+}
+
+.item .title {
+  font-weight: 1000;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+}
+
+.item .price {
+  margin-top: -150px;
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: #ffeb3b;
+}
+
+.plat-image {
+  width: 100%;              /* L’image prend toute la largeur du bloc */
+  max-height: 250px;        /* Hauteur max pour éviter que ce soit trop grand */
+  object-fit: cover;        /* Rognage propre pour que l’image remplisse bien sans déformation */
+  border-radius: 30px;      /* Bords arrondis pour matcher ton style */
+  margin-top: 20px;         /* Espace au-dessus de l’image */
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 1); /* Un peu d’ombre pour un effet propre */
+  position: relative;
+/* Dégradé sombre sur les bords et coins */
+-webkit-mask-image: 
+    linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
+  -webkit-mask-composite: destination-in;
+  mask-image: 
+    linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%),
+    linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 60%);
+  mask-composite: destination-in;
+}
+.call {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.call a {
+  color: #fff;
+  background-color: #dbcd038e;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.call a:hover {
+  background-color: #dbcd03;
+}
+
+.gunun-yemegi {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-top: 5px;
+}
+
+.section {
+  font-size: 1rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: rgba(255, 255, 255, 1);
+  margin-left: 0px;
+  display: block;
+}
+
+.gunun-yemegi-plat {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 0px;
+  display: block;
+  margin-top: 0px;
+}
+
+.arrow-down {
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid white;
+  margin: 30px auto;
+  margin-bottom: 50px;
+  display: block;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+   }
+  40% {
+    transform: translateY(-80px);
+   }
+  60% {
+    transform: translateY(-30px);
+   }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+   }
+  100% {
+    transform: translateY(50px);
+   }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Commence à droite hors de l'écran */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Se place à sa position finale */
+  }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background-color: black;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* imagefond au top, avec bon ratio */
+body::before {
+  content: "";
+  position: absolute;
+  top: -460px;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* prend tout l'écran en hauteur */
+  background-image: url('haslama.jpg');
+  background-size: cover; /* remplit sans déformer */
+  background-position: center top; /* centré horizontalement, en haut verticalement */
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+  filter: brightness(0.7); /* assombrit l’image */
+  animation: scrollDown 2s ease-in-out infinite alternate;
+}
+
+
+/* flame plus bas */
+body::after {
+  content: "";
+  position: absolute;
+  top: -3700px;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 100;
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  pointer-events: none;
+}
+
+@keyframes swipeHint {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(10px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.swiper .swiper-slide:first-child {
+  animation: swipeHint 2s ease-in-out infinite;
+}
+
+.item-compact {
+  min-height: auto !important;
+}
+
+  </style>
+</head>
+<body>
+  <a href="index.html" id="home-button" class="home-button">Accueil</a>
+
+
+  <div class="container">
+    
+    <h1 data-aos="fade-up">Bouillon</h1>
+    <h2.5 data-aos="fade-up" class="sub-title">Et Haşlama</h2.5>
+
+    <div class="arrow-down" data-aos="fade-up"></div>
+    <div class="section" data-aos="fade-up">
+      <h2>  <span class="gunun-yemegi-plat"> </span></h2>
+    </div>
+
+    <div class="item item-compact" data-aos="fade-up">
+      <div class="title"> </div>
+      <div class="sub-title gunun-yemegi"> </div>
+      <div class="price">15€</div>
+        <img src="haslama.jpg" alt="Soupe" class="plat-image">
+      </a>
+    </div>
+
+    <div class="item item-compact" data-aos="fade-up">
+      <div class="title"> </div>
+      <div class="sub-title gunun-yemegi"> </div>
+      </a>
+       <div style="margin-top: -150px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">De tendres morceaux de viande de bœuf ou d'agneau mijotés dans un bouillon parfumé, accompagnés de légumes fondants pour un plat léger et réconfortant.<br><br>Lezzetli et suyu içinde ağır ağır pişirilmiş, sebzelerle zenginleştirilmiş hafif ve doyurucu bir yemek.</div>
+    </div>
+
+    <div class="call" data-aos="fade-up">
+      <a href="tel:+33123456789">📞 Réserver par téléphone</a>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out',
+      once: false,
+      offset: 150,
+    });
+
+  </script>
+  <!-- Hamburger Menu -->
+<button class="hamburger" id="hamburger-btn">&#9776;</button>
+
+<!-- Menu de navigation (index.html) -->
+<div id="menu" class="menu">
+  <a href="boissons.html" class="menu-item">Boissons</a>
+  <a href="menusclassiques.html" class="menu-item">Menus Classiques</a>
+  <a href="sandwichs.html" class="menu-item">Sandwichs</a>
+  <a href="plats.html" class="menu-item">Plats</a>
+</div>
+
+
+  
+   <button id="scrollTopBtn" style="display:none;">↑</button>
+</button>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+ <script src="menu.js"></script>
+</body>
+</html>
