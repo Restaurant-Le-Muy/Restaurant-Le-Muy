@@ -336,6 +336,21 @@ body::after {
   pointer-events: none;
 }
 
+.extra-flame {
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 100;
+  background-image: url('flame.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -3;
+  pointer-events: none;
+}
+
+
 @keyframes swipeHint {
   0% { transform: translateX(0); }
   25% { transform: translateX(10px); }
@@ -640,7 +655,7 @@ padding-bottom: 10px;
   <div class="container" style="transform: translateY(-120px);">
 
     <div class="section" data-aos="fade-right">
-      <h2>Nos Plats Spéciaux<span class="gunun-yemegi-plat">Özel Yemeklerimiz</span></h2>
+      <h2 id="nosplatsspeciaux">Nos Plats Spéciaux<span class="gunun-yemegi-plat">Özel Yemeklerimiz</span></h2>
     </div>
 
     <div class="swiper mySwiper">
@@ -855,7 +870,7 @@ padding-bottom: 10px;
     <div class="item" data-aos="fade-up">
       <div class="title">Tous nos plats en assiette sont servis avec du boulgour, une garniture fraîche (salade, tomate, oignon) et des frites.</div>
       <div class="sub-title gunun-yemegi">Tüm tabaklarımız bulgur pilavı, taze garnitür (salata, domates, soğan) ve patates kızartması ile servis edilir.</div>
-      <div style="margin-top: -100px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);">8/8</div>
+      <div style="margin-top: -100px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5);"> </div>
 
     </div>
   </div>
@@ -863,11 +878,11 @@ padding-bottom: 10px;
   </div>
 </div>
 </section>
-<section class="snap-section" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<section class="snap-section" style="margin-bottom: 10px; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
   <div class="container" style="transform: translateY(-120px);">
 
     <div class="section" data-aos="fade-right">
-      <h2>Nos Sandwichs<span class="gunun-yemegi-plat">Sandviçlerimiz</span></h2>
+      <h2 id="nossandwichs">Nos Sandwichs<span class="gunun-yemegi-plat">Sandviçlerimiz</span></h2>
     </div>
 
     <div class="swiper mySwiper">
@@ -879,7 +894,7 @@ padding-bottom: 10px;
             <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Sandwich Döner Kebab&nbsp;&nbsp;&nbsp;&nbsp;→</div>
             <div class="sub-title gunun-yemegi">Döner Sandviç</div>
             <div class="price">10€</div>
-            <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+            <img src="donersandvic.jpg" alt="Soupe" class="plat-image">
             <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">
               Frites et salades incluses - disponibles en pain classique ou galette<br>
               Patates kızartması ve salata dahil - ekmek veya lavaş arasında servis edilir
@@ -892,7 +907,7 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Sandwich Kefta&nbsp;&nbsp;&nbsp;&nbsp;→</div>
       <div class="sub-title gunun-yemegi">Köfte Sandviç</div>
       <div class="price">10€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+        <img src="kefta.jpg" alt="Soupe" class="plat-image">
       <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Frites et salades incluses - disponibles en pain classique ou galette<br>Patates kızartması ve salata dahil - ekmek veya lavaş arasında servis edilir</div>
 
     </div>
@@ -904,7 +919,7 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Sandwich Merguez&nbsp;&nbsp;&nbsp;&nbsp;→</div>
       <div class="sub-title gunun-yemegi">Mergez Sandviç</div>
       <div class="price">10€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+        <img src="merguezsandvic.webp" alt="Soupe" class="plat-image">
       <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Frites et salades incluses - disponibles en pain classique ou galette<br>Patates kızartması ve salata dahil - ekmek veya lavaş arasında servis edilir</div>
 
     </div>
@@ -916,7 +931,7 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Sandwich Brochette&nbsp;&nbsp;&nbsp;&nbsp;→<br>d’Agneau</div>
       <div class="sub-title gunun-yemegi">Kuzu Şiş Sandviç</div>
       <div class="price">10€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+        <img src="kuzusissandvic.webp" alt="Soupe" class="plat-image">
       <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Frites et salades incluses - disponibles en pain classique ou galette<br>Patates kızartması ve salata dahil - ekmek veya lavaş arasında servis edilir</div>
 
     </div>
@@ -928,7 +943,7 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Sandwich Brochette&nbsp;&nbsp;&nbsp;&nbsp;→<br>de Poulet</div>
       <div class="sub-title gunun-yemegi">Tavuk Şiş Sandviç</div>
       <div class="price">10€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+        <img src="tavuksissandvic.webp" alt="Soupe" class="plat-image">
       <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Frites et salades incluses - disponibles en pain classique ou galette<br>Patates kızartması ve salata dahil - ekmek veya lavaş arasında servis edilir</div>
 
     </div>
@@ -940,7 +955,7 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Hamburger&nbsp;&nbsp;&nbsp;&nbsp;→</div>
       <div class="sub-title gunun-yemegi"> </div>
       <div class="price">12€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+        <img src="hamburger.jpg" alt="Soupe" class="plat-image">
       <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Frites et salades incluses<br>Patates kızartması ve salata dahil</div>
 
     </div>
@@ -952,7 +967,7 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Tacos 4 Viandes&nbsp;&nbsp;&nbsp;&nbsp;→</div>
       <div class="sub-title gunun-yemegi">4 Çeşit Etli Tacos</div>
       <div class="price">8€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+        <img src="tacos.jpg" alt="Soupe" class="plat-image">
       <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Döner Kebab, Poulet, Viande de Boeuf, Kefta<br>Döner, Tavuk, Et, Köfte</div>
 
     </div>
@@ -964,7 +979,7 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Tacos 4 Viandes&nbsp;&nbsp;&nbsp;&nbsp;→<br>+ Frites</div>
       <div class="sub-title gunun-yemegi">4 Çeşit Etli Tacos<br>+ Patates Kızartması</div>
       <div class="price">10€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+        <img src="tacosf.jpg" alt="Soupe" class="plat-image">
       <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Döner Kebab, Poulet, Viande de Boeuf, Kefta<br>Döner, Tavuk, Et, Köfte</div>
 
     </div>
@@ -976,7 +991,7 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Tacos 4 Viandes&nbsp;&nbsp;&nbsp;&nbsp;→<br>+ Frites & Boisson</div>
       <div class="sub-title gunun-yemegi">4 Çeşit Etli Tacos<br>+ Patates Kızartması & İçecek</div>
       <div class="price">11€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
+        <img src="tacosfb.jpg" alt="Soupe" class="plat-image">
       <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Döner Kebab, Poulet, Viande de Boeuf, Kefta<br>Döner, Tavuk, Et, Köfte</div>
 
     </div>
@@ -988,8 +1003,8 @@ padding-bottom: 10px;
       <div class="title">←&nbsp;&nbsp;&nbsp;&nbsp;Menu Enfant (-10 ans)&nbsp;&nbsp;&nbsp;&nbsp;→</div>
       <div class="sub-title gunun-yemegi">Çocuk Menüsü (10 yaş altı)</div>
       <div class="price">8€</div>
-        <img src="lahmacun.webp" alt="Soupe" class="plat-image">
-      <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Burger Nugget ou Steak au choix + Frites & Boisson<br>Nugget veya Köfte Burger + Patates Kızartması & İçecek</div>
+        <img src="menuenfant.jpg" alt="Soupe" class="plat-image">
+      <div style="margin-top: 10px; font-size: 0.5rem; color: rgba(255, 255, 255, 0.5);">Burger ou Nuggets au choix + Frites & Boisson<br>Nugget veya Burger + Patates Kızartması & İçecek</div>
 
     </div>
   </div>
@@ -997,12 +1012,12 @@ padding-bottom: 10px;
     </div>
   </div>
   </section>
-<section class="snap-section" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+<section class="snap-section" style="height: 100vh; display: flex; justify-content: center; align-items: center; margin-bottom: -250px;">
   <div class="container">
     <div class="item" data-aos="fade-up">
       <div class="title">Toutes Nos Boissons</div>
       <div class="sub-title gunun-yemegi">Tüm İçeceklerimiz</div>
-      <div class="price">🢃</div>
+      <div class="price"> </div>
       <a href="boissons.html">
         <img src="boissons.png" alt="Soupe" class="plat-image">
       </a>
@@ -1010,20 +1025,7 @@ padding-bottom: 10px;
   </div>
 </section>
 
-    <div class="section" data-aos="fade-right">
-      <h2>UNNAMED SECTION<span class="gunun-yemegi-plat">UNNAMED SECTION</span></h2>
-    </div>
-
-    <section class="snap-section">
-    <div class="item" data-aos="fade-up">
-      <div class="title">UNNAMED SECTION</div>
-      <div class="sub-title gunun-yemegi">UNNAMED SECTION</div>
-      <div class="price">🢃</div>
-      <a href="mercimek.html">
-        <img src="kahvalti.png" alt="Soupe" class="plat-image">
-      </a>
-    </div>
-</section>
+<div class="extra-flame"></div>
 
     <div class="call" data-aos="fade-up">
       <a href="tel:+33123456789">📞 Réserver par téléphone</a>
@@ -1048,8 +1050,8 @@ padding-bottom: 10px;
 <div id="menu" class="menu">
   <a href="boissons.html" class="menu-item">Boissons</a>
   <a href="menusclassiques.html" class="menu-item">Menus Classiques</a>
-  <a href="sandwichs.html" class="menu-item">Sandwichs</a>
-  <a href="plats.html" class="menu-item">Plats</a>
+  <a href="index.html#nossandwichs" class="menu-item">Sandwichs</a>
+  <a href="index.html#nosplatsspeciaux" class="menu-item">Nos Plats Spéciaux</a>
 </div>
 
 
