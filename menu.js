@@ -66,3 +66,16 @@ const swiper = new Swiper('.mySwiper', {
 });
 
 
+const topBtn = document.querySelector('.home-button');
+
+topBtn.addEventListener('click', (e) => {
+  document.body.style.scrollSnapType = 'none';
+  document.documentElement.style.scrollSnapType = 'none';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  setTimeout(() => {
+    document.body.style.scrollSnapType = 'y mandatory';
+    document.documentElement.style.scrollSnapType = 'y mandatory';
+  }, 1000); // Remets le snap après 1 sec
+});
